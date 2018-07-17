@@ -80,11 +80,6 @@ button:active{
     .bigscreen{
         display: none;
     }
-    *{
-        background: linear-gradient(#11998e, #38ef7d);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
     .smallscreen{
         display: block;
     }
@@ -92,6 +87,8 @@ button:active{
         text-align: center;
         font-family: 'Poppins';
         font-size: 2em;
+        font-weight: 500;
+        margin-top: 30vh;
         line-height: 1.6em;
         letter-spacing: 0.8px;
     }
