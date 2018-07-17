@@ -10,7 +10,7 @@
 
 <details>
 
-## Instructions
+<summary> <h2>Instructions</h2> </summary>
 
 * Clone the repository.
 * Navigate to the project directory.
