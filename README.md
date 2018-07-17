@@ -6,7 +6,7 @@
 
 **You may check it out [here](https://reddit-parser.herokuapp.com/)**
 
-*Or, you may follow these instructions to check it out locally*
+*Or, you may follow the instructions provided below (By expanding the below section) to check it out locally.*
 
 <details>
 
