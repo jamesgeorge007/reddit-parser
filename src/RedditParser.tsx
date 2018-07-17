@@ -65,7 +65,7 @@ class RedditParser extends React.Component<{}, IState>{
     return (
       <div>
         <form onSubmit = {this.submitForm}>
-        <input type="text" ref={this.textInput} onChange = {this.handleClick}/>
+        <input type="text" placeholder="subreddit name" ref={this.textInput} onChange = {this.handleClick}/>
         <br />
         <button className="slide" type="submit">submit</button>
         </form>

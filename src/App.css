@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://use.fontawesome.com/releases/v5.1.0/css/all.css');
 
 h1{
-    font-family: 'Muli', sans-serif;
+    font-family: 'Poppins';
     text-align: center;
     font-size: 3.4em;
 }
@@ -12,27 +13,32 @@ img{
     width: 120px;
     margin: 0 auto;
 }
-div{
+*{
+    background: skyblue;
+}
+.bigscreen{
     text-align: center;
 }
+.smallscreen{
+    display: none;
+}
 input[type="text"], button{
-    width: 20%;
+    width: 30%;
     font-size: 1.6em;
-    padding: 8px;
+    padding: 10px;
     border-radius: .375rem;
 }
 input[type="text"]{
-    border: 1px solid #ccc;
-}
-input[type="text"]:focus{
-    transition: all 0.4s ease;
-    width: 25%;
+    border: 1px solid #222;
+    background-color: #fff;
 }
 button{
-    border: none;
+    border: 2px solid #fff;
     margin-top: 1%;
-    background-color: skyblue;
-    color: #333;
+    background-color: #000;
+    color: #fff;
+    width: 32%;
+    font-size: 1.4em;
 }
 button:hover{
     transition: all 0.4s ease;
@@ -69,4 +75,24 @@ button:active{
     letter-spacing: 0.8px;
     line-height: 1.6em;
     margin-left: 5px;
+}
+@media only screen and (max-width: 1024px){
+    .bigscreen{
+        display: none;
+    }
+    *{
+        background: linear-gradient(#11998e, #38ef7d);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .smallscreen{
+        display: block;
+    }
+    .smallscreen p{
+        text-align: center;
+        font-family: 'Poppins';
+        font-size: 2em;
+        line-height: 1.6em;
+        letter-spacing: 0.8px;
+    }
 }
