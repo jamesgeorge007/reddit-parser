@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+h1{
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    font-size: 3.4em;
+}
+img{
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+}
+div{
+    text-align: center;
+}
+input[type="text"], button{
+    width: 20%;
+    font-size: 1.6em;
+    padding: 8px;
+    border-radius: .375rem;
+}
+input[type="text"]{
+    border: 1px solid #ccc;
+}
+input[type="text"]:focus{
+    transition: all 0.4s ease;
+    width: 25%;
+}
+button{
+    border: none;
+    margin-top: 1%;
+}
+.errors{
+    color: #fff;
+    background-color: orangered;
+    padding: 10px;
+    border-radius: .45em;
+    font-size: 1.1em;
+    width: 40vw;
+    margin: 5vh auto;
+    box-shadow: 0 0 5px 0 #2e2e2e;
+}
+.posts{
+    text-align: left;
+    margin-left: 20vw;
+}
+.posts p{
+    padding: 10px;
+}
+.posts p a{
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-family: 'Poppins';
+    letter-spacing: 0.8px;
+    line-height: 1.6em;
+}

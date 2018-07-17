@@ -14,6 +14,7 @@ interface IState{
 
 class RedditParser extends React.Component<{}, IState>{
   private textInput: React.RefObject<HTMLInputElement>;
+  private displayError: string;
   constructor(props: {}){
     super(props);
     this.state = {posts:[], subreddit: '', error: ''};
@@ -51,11 +52,13 @@ class RedditParser extends React.Component<{}, IState>{
     fetch(`https://www.reddit.com/r/${this.state.subreddit}.json`)
       .then(response => response.json())
       .then(json => {
+        this.displayError = 'none';
         const posts = json.data.children.map((p: any) => p.data);
         this.setState({ posts, error: ''});
     })
     .catch(err => {
-      this.setState({error: 'Provide valid subreddit name!', posts: []});
+      this.displayError = 'block';
+      this.setState({error: 'Provide a valid subreddit name!', posts: []});
     })
   }
   public render(): JSX.Element{
@@ -63,13 +66,14 @@ class RedditParser extends React.Component<{}, IState>{
       <div>
         <form onSubmit = {this.submitForm}>
         <input type="text" ref={this.textInput} onChange = {this.handleClick}/>
-        <button type="submit">Submit</button>
+        <br />
+        <button className="slide" type="submit">submit</button>
         </form>
-        <p>{this.state.error}</p>
-        <div>
+        <p className='errors' style={{display: this.displayError}}>{this.state.error}</p>
+        <div className="posts">
         {this.state.posts.map(post => (
             <p key={post.id}>
-              <a href={post.url}>{post.title}</a>
+              <a href={post.url} target="_blank">{post.title}</a>
             </p>
 ))}
       </div>
