@@ -3,6 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://use.fontawesome.com/releases/v5.1.0/css/all.css');
 
+@keyframes zoomIn{
+    from{
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 h1{
     font-family: 'Poppins';
     text-align: center;
@@ -15,6 +25,12 @@ img{
 }
 *{
     background: skyblue;
+}
+.bigscreen, .smallscreen{
+    animation-name: zoomIn;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
 }
 .bigscreen{
     text-align: center;
