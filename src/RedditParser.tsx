@@ -8,14 +8,15 @@ interface IPost{
 };
 interface IState{
   posts: IPost[],
-  subreddit: string
+  subreddit: string,
+  error: string
 };
 
 class RedditParser extends React.Component<{}, IState>{
   private textInput: React.RefObject<HTMLInputElement>;
   constructor(props: {}){
     super(props);
-    this.state = {posts:[], subreddit: ''};
+    this.state = {posts:[], subreddit: '', error: ''};
     this.textInput = React.createRef();
     this.getPosts = this.getPosts.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -51,8 +52,11 @@ class RedditParser extends React.Component<{}, IState>{
       .then(response => response.json())
       .then(json => {
         const posts = json.data.children.map((p: any) => p.data);
-        this.setState({ posts });
-});
+        this.setState({ posts, error: ''});
+    })
+    .catch(err => {
+      this.setState({error: 'Provide valid subreddit name!', posts: []});
+    })
   }
   public render(): JSX.Element{
     return (
@@ -61,6 +65,7 @@ class RedditParser extends React.Component<{}, IState>{
         <input type="text" ref={this.textInput} onChange = {this.handleClick}/>
         <button type="submit">Submit</button>
         </form>
+        <p>{this.state.error}</p>
         <div>
         {this.state.posts.map(post => (
             <p key={post.id}>
