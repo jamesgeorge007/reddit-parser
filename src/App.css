@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://use.fontawesome.com/releases/v5.1.0/css/all.css');
 
 h1{
     font-family: 'Muli', sans-serif;
@@ -55,4 +56,5 @@ button{
     font-family: 'Poppins';
     letter-spacing: 0.8px;
     line-height: 1.6em;
+    margin-left: 5px;
 }

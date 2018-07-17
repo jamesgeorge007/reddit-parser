@@ -73,6 +73,7 @@ class RedditParser extends React.Component<{}, IState>{
         <div className="posts">
         {this.state.posts.map(post => (
             <p key={post.id}>
+            <i className="fas fa-angle-double-right" />
               <a href={post.url} target="_blank">{post.title}</a>
             </p>
 ))}
